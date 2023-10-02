@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reservas",
+  "info": {
+    "singularName": "reserva",
+    "pluralName": "reservas",
+    "displayName": "Reserva",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true,
+      "default": "0"
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "reserva"
+    },
+    "vehiculo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehiculo.vehiculo",
+      "inversedBy": "reserva"
+    }
+  }
+}

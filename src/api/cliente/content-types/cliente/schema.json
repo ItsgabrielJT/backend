@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clientes",
+  "info": {
+    "singularName": "cliente",
+    "pluralName": "clientes",
+    "displayName": "Cliente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cedula": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true,
+      "default": "0"
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "apellido": {
+      "type": "string",
+      "required": true
+    },
+    "ciudad": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "telefono": {
+      "type": "string",
+      "required": true
+    },
+    "fecha_nacimiento": {
+      "type": "string",
+      "required": true
+    },
+    "reserva": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reserva.reserva",
+      "mappedBy": "cliente"
+    }
+  }
+}

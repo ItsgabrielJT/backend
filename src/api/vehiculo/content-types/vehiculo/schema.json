@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehiculos",
+  "info": {
+    "singularName": "vehiculo",
+    "pluralName": "vehiculos",
+    "displayName": "Vehiculo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "marca": {
+      "type": "string",
+      "required": true
+    },
+    "modelo": {
+      "type": "string",
+      "required": true
+    },
+    "anio_fabricacion": {
+      "type": "string",
+      "required": true
+    },
+    "placa": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "tipo_vehiculo": {
+      "type": "string",
+      "required": true
+    },
+    "kilometraje": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "reserva": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reserva.reserva",
+      "mappedBy": "vehiculo"
+    }
+  }
+}
